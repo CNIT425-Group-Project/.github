@@ -31,12 +31,13 @@ Firebase connection is done through async task and implemented in a way that dat
 `ForegroundBeaconService.java` - Handles backend logic for the interacting with beacon and also handles all the necessary configuration for the range and 
 notifications.
 
-![Beacon diagram](buildingEntranceFlow_Entering.png)
+![buildingEntranceFlow_Entering](https://github.com/user-attachments/assets/574137f2-3a6e-4bb4-ad43-8bf4464f528e)
+
 
 As we can see in the diagram when we entering the outer radius, approaching command is returned. As enter the inner radius we enter the building
 and the building information is returned. The beacon returns us a unique value linked to that specific beacon. In this diagram being 11001. 110 represents the building and 01 represents the door.
 
-![Beacon diagram](buildingEntranceFlow_exiting_edited.png)
+![buildingEntranceFlow_exiting_edited](https://github.com/user-attachments/assets/630f7474-16d4-4e05-ac59-3a75bfc91fd0)
 
 We can see a similar logic when the user exits the door. We have 2 status's. We first go back into approaching mode and as soon as we leave the inner radius we are in exiting mode. Our beacon can sense how far we are from the beacon and also if we moving closer or away from beacon which helps us determine what stage we are in.
 
